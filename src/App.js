@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Header from './Components/Header';
+import Card from './Components/Card';
+import Label from './Components/Label';
+import GetApp from './Components/GetApp';
+import Comp from './Components/Comp';
+import Faq from './Components/Faq';
+import Footer from './Components/Footer';
 
 function App() {
+  const [locat, setLocation] = useState("Namakkal");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header setLocation={setLocation} locat={locat}/>
+      <Card/>
+      <Label locat={locat} />
+      <GetApp/>
+      <Faq/>
+      <Footer/>
     </div>
   );
 }
